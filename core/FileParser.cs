@@ -1,11 +1,11 @@
 ﻿namespace PenduSharp.Core;
 
-public class TxtImageParser
+public static class FileParser
 {
     /**
      * Parses a text file containing multiple mult-line ASCII art images and returns a list of ASCII images
      */
-    public static List<ASCIIImage> Parse(string filePath, int imageLineCount)
+    public static List<ASCIIImage> ParseMultiImageTextFile(string filePath, int imageLineCount)
     {
         var images = new List<ASCIIImage>();
         var lines = File.ReadAllLines(filePath).ToList();
@@ -17,5 +17,14 @@ public class TxtImageParser
         }
         
         return images;
+    }
+
+    /**
+     * Parse a folder containing multiple JSON files, each representing a WordList, and returns a list of WordLists
+     */
+    public static List<WordList> ParseMultiWordListFile(string folderPath)
+    {
+        var files = Directory.GetFiles(folderPath, "*.json");
+        return files.Select(WordList.FromFile).ToList();
     }
 }

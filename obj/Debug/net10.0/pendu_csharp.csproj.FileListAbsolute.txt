@@ -13,6 +13,7 @@ D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\obj\Debug\net10.0\pendu_csharp.pdb
 D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\obj\Debug\net10.0\pendu_csharp.genruntimeconfig.cache
 D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\obj\Debug\net10.0\ref\pendu_csharp.dll
 D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\bin\Debug\net10.0\assets\hangman.txt
-D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\bin\Debug\net10.0\wordLists\word_easy.json
-D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\bin\Debug\net10.0\wordLists\word_hard.json
-D:\YNOV\2025-2026\TP\CSharp\pendu_csharp\bin\Debug\net10.0\wordLists\word_medium.json
+D:\YNOV\2025-2026\TP\CSharp\Pendu_CSharp\bin\Debug\net10.0\assets\wordLists\word_easy.json
+D:\YNOV\2025-2026\TP\CSharp\Pendu_CSharp\bin\Debug\net10.0\assets\wordLists\word_hard.json
+D:\YNOV\2025-2026\TP\CSharp\Pendu_CSharp\bin\Debug\net10.0\assets\wordLists\word_medium.json
+D:\YNOV\2025-2026\TP\CSharp\Pendu_CSharp\obj\Debug\net10.0\pendu_csharp.sourcelink.json

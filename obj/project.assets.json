@@ -8,24 +8,19 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\tclem\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\mcord\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tclem\\Documents\\pendu_csharp\\pendu_csharp.csproj",
+      "projectUniqueName": "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\pendu_csharp.csproj",
       "projectName": "pendu_csharp",
-      "projectPath": "C:\\Users\\tclem\\Documents\\pendu_csharp\\pendu_csharp.csproj",
-      "packagesPath": "C:\\Users\\tclem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tclem\\Documents\\pendu_csharp\\obj\\",
+      "projectPath": "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\pendu_csharp.csproj",
+      "packagesPath": "C:\\Users\\mcord\\.nuget\\packages\\",
+      "outputPath": "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\tclem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\mcord\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
