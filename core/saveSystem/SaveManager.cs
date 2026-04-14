@@ -7,10 +7,7 @@ public static class SaveManager
     // System specific path to store save files, using AppData for user-specific data
     private static readonly string SaveDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PenduSharp");
     
-    private static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions
-    {
-        WriteIndented = true
-    };
+    private static readonly JsonSerializerOptions JsonOptions = new() { WriteIndented = true };
     
     private static string GetPath(int slot)
     {

@@ -2,7 +2,7 @@
 
 public class MenuController
 {
-    public static readonly MenuController Instance = new MenuController();
+    public static readonly MenuController Instance = new();
     
     private readonly Dictionary<string, AbstractMenu> _menus = new();
     private string? _currentMenu;
