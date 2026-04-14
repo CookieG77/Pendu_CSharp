@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace PenduSharp.Core;
+namespace PenduSharp.Core.Parsing;
 
 public class WordList(List<string> words, int index, string displayName)
 {

@@ -1,4 +1,4 @@
-﻿namespace PenduSharp.Core;
+﻿namespace PenduSharp.Core.Parsing;
 
 public static class FileParser
 {

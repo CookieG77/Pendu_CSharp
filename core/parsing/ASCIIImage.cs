@@ -1,4 +1,4 @@
-﻿namespace PenduSharp.Core;
+﻿namespace PenduSharp.Core.Parsing;
 
 /**
  * Represents an ASCII image, which is a multi-line string that can be used to display a visual representation of something in the console.

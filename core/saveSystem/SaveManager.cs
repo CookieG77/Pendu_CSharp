@@ -1,32 +1,40 @@
 ﻿using System.Text.Json;
 
-namespace PenduSharp.Core;
+namespace PenduSharp.Core.SaveSystem;
 
 public static class SaveManager
 {
+    // System specific path to store save files, using AppData for user-specific data
+    private static readonly string SaveDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PenduSharp");
+    
+    private static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions
+    {
+        WriteIndented = true
+    };
+    
     private static string GetPath(int slot)
     {
-        return $"save{slot}.txt";
+        return Path.Combine(SaveDirectory, $"save{slot}.txt");
     }
 
     public static void Save(GameState state, int slot)
     {
-        if (slot < 1 || slot > 3)
+        if (slot is < 1 or > 3)
         {
             throw new ArgumentException("Slot must be 1, 2 or 3");
         }
         
         var json = JsonSerializer.Serialize(
             state,
-            new JsonSerializerOptions{WriteIndented = true}
+            JsonOptions
         );
         
         File.WriteAllText(GetPath(slot), json);
     }
 
-    public static GameState Load(int slot)
+    public static GameState? Load(int slot)
     {
-        if (slot < 1 || slot > 3)
+        if (slot is < 1 or > 3)
         {
             throw new ArgumentException("Slot must be 1, 2 or 3");
         }
