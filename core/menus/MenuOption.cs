@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PenduSharp.Core.Menus;
+﻿namespace PenduSharp.Core.Menus;
 
 public sealed class MenuOption
 {

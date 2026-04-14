@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace PenduSharp.Core.Menus;
+﻿namespace PenduSharp.Core.Menus;
 
 public class MenuController
 {
