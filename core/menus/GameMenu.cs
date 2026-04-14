@@ -5,7 +5,7 @@ namespace PenduSharp.Core.Menus;
 
 public class GameMenu : AbstractMenu
 {
-    public GameState? CurrentGameState { get; private set; }
+    private GameState? CurrentGameState { get; set; }
     
     private int? _currentSaveSlot;
     
@@ -66,7 +66,7 @@ public class GameMenu : AbstractMenu
         {
             var input = Console.ReadLine();
 
-            if (!String.IsNullOrEmpty(input) )
+            if (!string.IsNullOrEmpty(input))
             {
                 input = Normalizer.NormalizeStr(input);
             }
@@ -102,7 +102,7 @@ public class GameMenu : AbstractMenu
                 controller.SetActiveMenu("main_menu");
                 return;
             }
-            else if (input.Length == 1 && char.IsLetter(input[0]))
+            else if (input is { Length: 1 } && char.IsLetter(input[0]))
             {
                 var guessedLetter = char.ToLower(input[0]);
                 
@@ -139,14 +139,12 @@ public class GameMenu : AbstractMenu
                 }
                 
                 // Check for lose condition
-                if (CurrentGameState.AttemptsLeft <= 0)
-                {
-                    Console.WriteLine($"Game Over! The word was '{CurrentGameState.Word}'.");
-                    Console.WriteLine("Press any key to return to the main menu.");
-                    Console.ReadKey();
-                    controller.SetActiveMenu("main_menu");
-                    break;
-                }
+                if (CurrentGameState.AttemptsLeft > 0) continue;
+                Console.WriteLine($"Game Over! The word was '{CurrentGameState.Word}'.");
+                Console.WriteLine("Press any key to return to the main menu.");
+                Console.ReadKey();
+                controller.SetActiveMenu("main_menu");
+                break;
             }
             else
             {
