@@ -93,9 +93,8 @@ public class GameMenu : AbstractMenu
             }
             else if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine("Exiting to main menu...");
-                Thread.Sleep(3000); // Wait for 3 seconds before returning to the main menu
                 controller.SetActiveMenu("main_menu");
+                return;
             }
             
             else if (input.Length == 1 && char.IsLetter(input[0]))
