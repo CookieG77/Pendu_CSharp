@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\YNOV\\2025-2026\\TP\\CSharp\\pendu_csharp\\pendu_csharp.csproj": {}
+    "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\pendu_csharp.csproj": {}
   },
   "projects": {
-    "D:\\YNOV\\2025-2026\\TP\\CSharp\\pendu_csharp\\pendu_csharp.csproj": {
+    "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\pendu_csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\YNOV\\2025-2026\\TP\\CSharp\\pendu_csharp\\pendu_csharp.csproj",
+        "projectUniqueName": "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\pendu_csharp.csproj",
         "projectName": "pendu_csharp",
-        "projectPath": "D:\\YNOV\\2025-2026\\TP\\CSharp\\pendu_csharp\\pendu_csharp.csproj",
+        "projectPath": "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\pendu_csharp.csproj",
         "packagesPath": "C:\\Users\\mcord\\.nuget\\packages\\",
-        "outputPath": "D:\\YNOV\\2025-2026\\TP\\CSharp\\pendu_csharp\\obj\\",
+        "outputPath": "D:\\YNOV\\2025-2026\\TP\\CSharp\\Pendu_CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mcord\\AppData\\Roaming\\NuGet\\NuGet.Config"
