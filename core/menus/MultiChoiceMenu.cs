@@ -1,4 +1,7 @@
-﻿namespace PenduSharp.Core.Menus;
+﻿using System;
+using System.Collections.Generic;
+
+namespace PenduSharp.Core.Menus;
 
 public class MultiChoiceMenu : AbstractMenu
 {
@@ -6,7 +9,7 @@ public class MultiChoiceMenu : AbstractMenu
     public string Title { get; protected set; }
     public List<MenuOption> Options { get; protected set; } = new();
 
-    private MultiChoiceMenu(string title)
+    protected MultiChoiceMenu(string title)
     {
         Title = title;
     }
@@ -75,7 +78,7 @@ public class MultiChoiceMenu : AbstractMenu
         /**
          * Add a single option to the menu by providing a label and an action.
          */
-        public Builder AddOption(string label, Action<MenuController> action)
+        public Builder WithOption(string label, Action<MenuController> action)
         {
             if (string.IsNullOrWhiteSpace(label))
                 throw new ArgumentException("Label cannot be null or empty.", nameof(label));

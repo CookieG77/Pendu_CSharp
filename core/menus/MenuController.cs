@@ -1,4 +1,7 @@
-﻿namespace PenduSharp.Core.Menus;
+﻿using System;
+using System.Collections.Generic;
+
+namespace PenduSharp.Core.Menus;
 
 public class MenuController
 {
@@ -18,7 +21,7 @@ public class MenuController
 
         ArgumentNullException.ThrowIfNull(menu);
 
-        if (_menus.TryAdd(key, menu))
+        if (!_menus.TryAdd(key, menu))
             throw new ArgumentException($"A menu with the key '{key}' is already registered.", nameof(key));
     }
 
@@ -39,6 +42,15 @@ public class MenuController
     public T GetMenu<T>(string key) where T : AbstractMenu
     {
         return GetMenu(key) is not T typedMenu ? throw new InvalidCastException($"Menu with key '{key}' is not of type {typeof(T).Name}.") : typedMenu;
+    }
+    
+    /**
+     * Gets the currently active menu.
+     * Throws an InvalidOperationException if no active menu is set.
+     */
+    public AbstractMenu GetCurrentMenu()
+    {
+        return _currentMenu is null ? throw new InvalidOperationException("No active menu set. Please set an active menu before trying to get the current menu.") : _menus[_currentMenu];
     }
     
     /**

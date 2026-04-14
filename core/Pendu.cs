@@ -1,25 +1,37 @@
-﻿using PenduSharp.Core.Parsing;
+﻿using System;
+using System.IO;
+using PenduSharp.Core.Menus;
+using PenduSharp.Core.Parsing;
 using PenduSharp.Core.SaveSystem;
 
 namespace PenduSharp.Core;
 
+/**
+ * Main class of the application, responsible for initializing the menu system and starting the application loop.
+ */
 public static class Pendu
 {
-    public static void Main()
+    public static void StartGame()
     {
-        Console.WriteLine("Hello World! AAAA");
+        // ======= Menu initialization =======
 
-        // var images = TxtImageParser.Parse(Path.Combine(AppContext.BaseDirectory, "assets", "hangman.txt"), 7);
-        //
-        // foreach (var image in images)
-        // {
-        //     Console.WriteLine("1111111111111");
-        //     image.Print();
-        // }
+        var menuController = MenuController.Instance; // Get the singleton instance of the MenuController
         
-        var wordLists = FileParser.ParseMultiWordListFile(Path.Combine(AppContext.BaseDirectory, "assets", "wordLists"));
+        menuController.Register("main_menu", new MultiChoiceMenu.Builder()
+            .WithTitle("Main Menu")
+            .WithOption("Start Game", controller => { controller.SetActiveMenu("difficulty_menu"); })
+            .WithOption("Load Game", controller => { controller.SetActiveMenu("load_game_menu"); })
+            .WithOption("Exit", controller => { controller.Stop(); })
+            .Build()
+        );
         
-        foreach (var wordList in wordLists)
-            Console.WriteLine($" {wordList.Index}. {wordList.DisplayName} ({wordList.Words.Count} words)");
+        menuController.Register("difficulty_menu", new DifficultyChoiceMenu("Choose Difficulty"));
+        
+        menuController.Register("game_menu", new GameMenu());
+        
+        // ======= Start the application =======
+        
+        menuController.SetActiveMenu("main_menu");
+        menuController.Run();
     }
 }

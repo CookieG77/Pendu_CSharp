@@ -1,4 +1,9 @@
-﻿namespace PenduSharp.Core.Parsing;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace PenduSharp.Core.Parsing;
 
 public static class FileParser
 {
@@ -25,6 +30,10 @@ public static class FileParser
     public static List<WordList> ParseMultiWordListFile(string folderPath)
     {
         var files = Directory.GetFiles(folderPath, "*.json");
-        return files.Select(WordList.FromFile).ToList();
+        return files
+            .Select(WordList.FromFile)
+            .OrderBy(wordList => wordList.Index)
+            .ThenBy(wordList => wordList.DisplayName, StringComparer.OrdinalIgnoreCase)
+            .ToList();
     }
 }

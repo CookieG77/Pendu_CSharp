@@ -1,3 +1,3 @@
 ﻿using PenduSharp.Core;
 
-Pendu.Main();
+Pendu.StartGame();
