@@ -19,6 +19,7 @@ public class LoadGameMenu() : MultiChoiceMenu("Load Game")
             Console.WriteLine("No saved games available.");
             Console.ResetColor();
             Console.WriteLine("Press any key to return to the main menu.");
+            return;
         }
         
         base.Display(controller);
@@ -31,6 +32,7 @@ public class LoadGameMenu() : MultiChoiceMenu("Load Game")
         {
             Console.ReadKey();
             controller.SetActiveMenu("main_menu");
+            return;
         }
         
         base.HandleInput(controller);
@@ -49,6 +51,7 @@ public class LoadGameMenu() : MultiChoiceMenu("Load Game")
         Options.Clear();
         foreach (var save in savedGames)
         {
+            _noSavesAvailable = false;
             var saveSlot = save; // Capture the current value of save for use in the lambda
             Options.Add(new MenuOption($"Save Slot {saveSlot}", controller =>
             {
