@@ -1,4 +1,5 @@
 ﻿using PenduSharp.Core.Menus;
+using PenduSharp.Core.SaveSystem;
 
 namespace PenduSharp.Core;
 
@@ -21,7 +22,9 @@ public static class Pendu
             .Build()
         );
         
-        menuController.Register("difficulty_menu", new DifficultyChoiceMenu("Choose Difficulty"));
+        menuController.Register("difficulty_menu", new DifficultyChoiceMenu());
+
+        menuController.Register("load_game_menu", new LoadGameMenu());
         
         menuController.Register("game_menu", new GameMenu());
         

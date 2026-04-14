@@ -12,7 +12,6 @@ public class GameState
     
     [JsonPropertyName("guessedLetters")]
     public List<char> GuessedLetters { get; set; } = [];
-    
-    [JsonPropertyName("attemptsLeft")]
-    public int AttemptsLeft { get; set; }
+
+    [JsonPropertyName("attemptsLeft")] public int AttemptsLeft { get; set; } = AssetLoader.AsciiImages.Count - 1; // Default to the maximum number of attempts based on the number of ASCII images available
 }

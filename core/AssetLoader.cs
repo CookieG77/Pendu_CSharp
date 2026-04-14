@@ -10,6 +10,6 @@ namespace PenduSharp.Core;
  */
 public static class AssetLoader
 {
-    public static readonly List<ASCIIImage> AsciiImages = FileParser.ParseMultiImageTextFile(Path.Combine(AppContext.BaseDirectory, "assets", "hangman.txt"), 7);
+    public static readonly List<ASCIIImage> AsciiImages = FileParser.ParseMultiImageTextFile(Path.Combine(AppContext.BaseDirectory, "assets", "hangman.txt"), 8);
     public static readonly List<WordList> WordLists = FileParser.ParseMultiWordListFile(Path.Combine(AppContext.BaseDirectory, "assets", "wordLists"));
 }
