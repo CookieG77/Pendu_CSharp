@@ -1,4 +1,5 @@
 ﻿using PenduSharp.Core.SaveSystem;
+using PenduSharp.Core.utils;
 
 namespace PenduSharp.Core.Menus;
 
@@ -64,6 +65,11 @@ public class GameMenu : AbstractMenu
         while (true)
         {
             var input = Console.ReadLine();
+
+            if (!String.IsNullOrEmpty(input) )
+            {
+                input = Normalizer.NormalizeStr(input);
+            }
             
             // Handle special commands like "save" or "exit"
             if (string.Equals(input, "save", StringComparison.OrdinalIgnoreCase))
@@ -97,7 +103,6 @@ public class GameMenu : AbstractMenu
                 Thread.Sleep(3000); // Wait for 3 seconds before returning to the main menu
                 controller.SetActiveMenu("main_menu");
             }
-            
             else if (input.Length == 1 && char.IsLetter(input[0]))
             {
                 var guessedLetter = char.ToLower(input[0]);
