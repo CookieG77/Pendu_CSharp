@@ -47,6 +47,7 @@ public class GameMenu : AbstractMenu
         
         var displayWord = string.Concat(CurrentGameState.Word.Select(c => CurrentGameState.GuessedLetters.Contains(c) ? $"{c} " : "_ "));
         Console.WriteLine($"Word: {displayWord.Trim()}");
+        Console.WriteLine($"Letters guessed: [{String.Join(", ", CurrentGameState.GuessedLetters)}]");
         Console.WriteLine($"Attempts Left: {CurrentGameState.AttemptsLeft}");
         Console.WriteLine("Type 'save' to save your game, or 'exit' to return to the main menu.");
     }
